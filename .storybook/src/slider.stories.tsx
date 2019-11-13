@@ -12,7 +12,7 @@ export const Standard = () => {
   slider(
     root,
     {
-      header: 'Visible',
+      header: 'Radius',
       min: 0,
       max: 50,
       step: 2,

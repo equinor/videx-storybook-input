@@ -17,7 +17,23 @@ npm install --save @equinor/videx-storybook-input
 import { toggle, slider, ... } from '@equinor/videx-storybook-input';
 ```
 
-## Available functions
+## Modules
+
+#### Slider
+
+![Slider](images/slider.png)
+
+#### Toggle
+
+Standard:
+
+![Toggle](images/toggle.png)
+
+Hexagon:
+
+![HexagonToggle](images/hexagonToggle.png)
+
+## Available modules
 
 <table style="width:auto;">
   <tr>
