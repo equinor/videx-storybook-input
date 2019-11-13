@@ -69,5 +69,8 @@
       "tsx",
       "js"
     ]
+  },
+  "dependencies": {
+    "@equinor/videx-math": "^1.0.12"
   }
 }

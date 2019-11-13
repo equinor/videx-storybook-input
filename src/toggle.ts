@@ -1,7 +1,7 @@
-import * as d3 from 'd3';
+import { Selection, easeBounce } from 'd3';
 
 /**
- * Settings used to initialize toggle module.
+ * Settings used to initialize toggle module
  */
 interface ToggleSettings {
   /**
@@ -20,15 +20,15 @@ interface ToggleSettings {
  * @param settings Collection of settings to use when creating module
  * @param callback Callback function used when value changes
  */
-export function toggle (root: d3.Selection<HTMLDivElement, undefined, null, undefined>, settings: ToggleSettings, callback: (d: boolean) => void): void {
+export function toggle (root: Selection<HTMLDivElement, undefined, null, undefined>, settings: ToggleSettings, callback: (d: boolean) => void): void {
   // get settings variables
   const header: string = settings.header || 'Toggle';
   let toggled: boolean = (settings.value === undefined) ? false : settings.value;
 
-  let slider: d3.Selection<HTMLDivElement, undefined, null, undefined>;
+  let slider: Selection<HTMLDivElement, undefined, null, undefined>;
 
   // Container
-  const container: d3.Selection<HTMLDivElement, undefined, null, undefined> = root.append('div')
+  const container: Selection<HTMLDivElement, undefined, null, undefined> = root.append('div')
     .style('width', '50px')
     .style('height', '24px')
     .style('background-color', toggled ? 'MediumSeaGreen' : 'Grey')
@@ -37,7 +37,7 @@ export function toggle (root: d3.Selection<HTMLDivElement, undefined, null, unde
       toggled = !toggled;
       slider
         .transition()
-        .ease(d3.easeBounce)
+        .ease(easeBounce)
         .duration(400)
         .style('transform', toggled ? 'translate(28px, 2px)' : 'translate(2px, 2px)');
       container
